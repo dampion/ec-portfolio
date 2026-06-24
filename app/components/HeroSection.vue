@@ -19,11 +19,11 @@ onMounted(() => {
 <template>
   <section
     id="about"
-    class="hero-fiami relative flex min-h-[100svh] flex-col"
+    class="hero-cinematic relative flex min-h-[100svh] flex-col"
     :class="{ 'intro-ready': introReady }"
   >
-    <div class="hero-fiami-glow pointer-events-none absolute inset-0" aria-hidden="true" />
-    <div class="hero-fiami-grid pointer-events-none absolute inset-0" aria-hidden="true" />
+    <div class="hero-cinematic-glow pointer-events-none absolute inset-0" aria-hidden="true" />
+    <div class="hero-cinematic-grid pointer-events-none absolute inset-0" aria-hidden="true" />
 
     <div class="section-container relative z-10 flex flex-1 flex-col justify-center pb-28 pt-28 md:pb-32 md:pt-32">
       <p class="intro-fade intro-fade-1 hero-eyebrow mb-4 text-sm font-medium tracking-[0.2em] text-[#A4DEFF]">

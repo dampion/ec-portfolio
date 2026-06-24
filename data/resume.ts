@@ -55,8 +55,8 @@ export const resume: ResumeData = {
     },
     brand: 'EC',
     title: {
-      zh: '斐亞米有限公司 · 前端工程師 Lead',
-      en: 'Feiyami Ltd. · Frontend Engineer Lead',
+      zh: '前端工程師',
+      en: 'Web Developer',
     },
     summary: {
       zh: '專注於 Vue 與 Hybrid App 開發的前端開發者，擅長 Web / H5 高還原切版、API 串接與前端效能優化。重視程式碼品質、使用者體驗與跨團隊協作，具備 Git flow、Code Review 與 CI/CD 實務經驗。',
