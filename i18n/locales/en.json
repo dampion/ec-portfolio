@@ -1,0 +1,36 @@
+{
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "competencies": "Expertise",
+    "skills": "Skills",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "sections": {
+    "about": "About Me",
+    "experience": "Work Experience",
+    "competencies": "Core Competencies",
+    "skills": "Skills",
+    "education": "Education",
+    "contact": "Get in Touch"
+  },
+  "hero": {
+    "contactMe": "Contact Me",
+    "viewExperience": "View Experience",
+    "scroll": "Scroll"
+  },
+  "contact": {
+    "email": "Email",
+    "location": "Location",
+    "links": "Links"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "meta": {
+    "title": "Evan Chen · Frontend Engineer",
+    "description": "Evan Chen — Frontend Engineer Lead at Feiyami Ltd."
+  }
+}

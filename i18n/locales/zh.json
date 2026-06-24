@@ -1,0 +1,36 @@
+{
+  "nav": {
+    "about": "關於",
+    "experience": "經歷",
+    "competencies": "能力",
+    "skills": "技能",
+    "education": "學歷",
+    "contact": "聯絡"
+  },
+  "sections": {
+    "about": "關於我",
+    "experience": "工作經歷",
+    "competencies": "核心能力",
+    "skills": "技能",
+    "education": "學歷",
+    "contact": "聯絡方式"
+  },
+  "hero": {
+    "contactMe": "聯絡我",
+    "viewExperience": "查看經歷",
+    "scroll": "Scroll"
+  },
+  "contact": {
+    "email": "電子郵件",
+    "location": "所在地",
+    "links": "連結"
+  },
+  "theme": {
+    "light": "淺色",
+    "dark": "深色"
+  },
+  "meta": {
+    "title": "陳冠鈞 · 前端工程師",
+    "description": "陳冠鈞 — 斐亞米有限公司前端工程師 Lead 個人履歷"
+  }
+}
