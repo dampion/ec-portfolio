@@ -51,11 +51,26 @@ pnpm dlx serve .output/public
 
 ## 部署
 
-### Vercel
+### Vercel（已設定）
 
-1. 將 repo 連接至 Vercel
-2. Build Command：`pnpm generate`
-3. Output Directory：`.output/public`
+專案已連接 GitHub：[github.com/dampion/ec-portfolio](https://github.com/dampion/ec-portfolio)
+
+[`vercel.json`](vercel.json) 設定：
+
+- Install Command：`pnpm install`
+- Build Command：`pnpm generate`
+- Output Directory：`.output/public`
+- Node.js：`24.17.0`（見 `package.json` engines）
+
+**首次 / 手動部署：**
+
+```bash
+pnpm dlx vercel --prod
+```
+
+之後每次 push 到 `main` 會自動部署。
+
+**Dashboard：** [vercel.com/dashboard](https://vercel.com/dashboard) → `ec-portfolio`
 
 ### GitHub Pages（子路徑）
 
