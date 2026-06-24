@@ -8,7 +8,6 @@ export function useResume() {
   const profile = computed(() => ({
     name: pickLocalized(resume.profile.name, currentLocale.value),
     brand: resume.profile.brand,
-    brand: resume.profile.brand,
     title: pickLocalized(resume.profile.title, currentLocale.value),
     summary: pickLocalized(resume.profile.summary, currentLocale.value),
     email: resume.profile.email,
