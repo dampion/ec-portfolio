@@ -69,6 +69,7 @@ export const resume: ResumeData = {
     },
     links: [
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/evan-chen-6a9308b5/' },
+      { label: 'GitHub', url: 'https://github.com/dampion' },
     ],
   },
   experience: [
