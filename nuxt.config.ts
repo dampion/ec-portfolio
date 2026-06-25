@@ -15,6 +15,12 @@ export default defineNuxtConfig({
     preset: 'static',
   },
 
+  runtimeConfig: {
+    public: {
+      gtagId: process.env.NUXT_PUBLIC_GTAG_ID || 'G-1MDJXNJJ53',
+    },
+  },
+
   colorMode: {
     classSuffix: '',
     preference: 'system',
