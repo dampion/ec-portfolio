@@ -18,7 +18,14 @@
   "hero": {
     "contactMe": "Contact Me",
     "viewExperience": "View Experience",
-    "scroll": "Scroll"
+    "scroll": "Scroll",
+    "tagLottery": "Lottery",
+    "tagSports": "Sports",
+    "tagApp": "App Dev",
+    "tagWeb": "Web Dev",
+    "tagVue": "Vue2/Vue3",
+    "tagFlutter": "Flutter",
+    "tagCreateJs": "Create.js"
   },
   "print": {
     "documentTitle": "Resume",

@@ -129,8 +129,8 @@ export const resume: ResumeData = {
   experienceFocus: [
     {
       title: {
-        zh: '彩票娛樂平台開發（0–90%）',
-        en: 'Lottery Entertainment Platform (0–90%)',
+        zh: '彩票娛樂平台開發（0–100%）',
+        en: 'Lottery Entertainment Platform (0–100%)',
       },
       description: {
         zh: '投注流程、開獎動畫與會員介面前端開發',
