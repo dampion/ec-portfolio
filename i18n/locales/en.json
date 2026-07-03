@@ -20,6 +20,12 @@
     "viewExperience": "View Experience",
     "scroll": "Scroll"
   },
+  "print": {
+    "documentTitle": "Resume",
+    "backToSite": "Back to site",
+    "downloadPdf": "Print / Save as PDF",
+    "summary": "Summary"
+  },
   "contact": {
     "email": "Email",
     "location": "Location",

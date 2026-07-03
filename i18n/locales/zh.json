@@ -20,6 +20,12 @@
     "viewExperience": "查看經歷",
     "scroll": "Scroll"
   },
+  "print": {
+    "documentTitle": "履歷",
+    "backToSite": "返回網站",
+    "downloadPdf": "列印 / 存成 PDF",
+    "summary": "個人簡介"
+  },
   "contact": {
     "email": "電子郵件",
     "location": "所在地",

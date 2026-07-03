@@ -6,6 +6,9 @@
 .cache
 dist
 
+# Generated interview resume PDF
+/output
+
 # Node dependencies
 node_modules
 

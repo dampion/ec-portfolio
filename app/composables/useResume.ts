@@ -1,9 +1,14 @@
 import { resume, pickLocalized, type Locale } from '~~/data/resume'
 
-export function useResume() {
+export function useResume(localeOverride?: MaybeRef<Locale>) {
   const { locale } = useI18n()
 
-  const currentLocale = computed(() => locale.value as Locale)
+  const currentLocale = computed(() => {
+    if (localeOverride !== undefined) {
+      return unref(localeOverride) as Locale
+    }
+    return locale.value as Locale
+  })
 
   const profile = computed(() => ({
     name: pickLocalized(resume.profile.name, currentLocale.value),
@@ -41,9 +46,17 @@ export function useResume() {
     })),
   )
 
+  const experienceFocus = computed(() =>
+    resume.experienceFocus.map(item => ({
+      title: pickLocalized(item.title, currentLocale.value),
+      description: pickLocalized(item.description, currentLocale.value),
+    })),
+  )
+
   return {
     profile,
     experience,
+    experienceFocus,
     competencies,
     skills,
     education,

@@ -12,7 +12,13 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "resume:pdf": "node scripts/generate-resume-pdf.mjs",
+    "resume:pdf:en": "node scripts/generate-resume-pdf.mjs --en",
     "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.0",
+    "serve-handler": "^6.1.6"
   },
   "dependencies": {
     "@nuxtjs/color-mode": "^4.0.1",

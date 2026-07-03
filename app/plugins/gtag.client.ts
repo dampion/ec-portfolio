@@ -12,6 +12,9 @@ export default defineNuxtPlugin(() => {
 
   if (!gtagId || import.meta.dev) return
 
+  const route = useRoute()
+  if (route.path.startsWith('/print')) return
+
   window.dataLayer = window.dataLayer || []
   window.gtag = function gtag() {
     // Must push `arguments` object, not a rest array — GA reads this format.

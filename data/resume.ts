@@ -8,6 +8,11 @@ export interface ResumeLink {
   url: string
 }
 
+export interface ExperienceFocusItem {
+  title: LocalizedText
+  description: LocalizedText
+}
+
 export interface ExperienceItem {
   company: LocalizedText
   role: LocalizedText
@@ -42,6 +47,7 @@ export interface ResumeData {
     links: ResumeLink[]
   }
   experience: ExperienceItem[]
+  experienceFocus: ExperienceFocusItem[]
   competencies: CompetencyItem[]
   skills: SkillItem[]
   education: EducationItem[]
@@ -117,6 +123,38 @@ export const resume: ResumeData = {
           'Basic knowledge of d3.js data visualization, Linux (VM, server setup, build processes), and front-end deployment hooks',
           'Not a backend API specialist but able to collaborate on basic API development; open and adaptable in team communication',
         ],
+      },
+    },
+  ],
+  experienceFocus: [
+    {
+      title: {
+        zh: '彩票娛樂平台開發（0–90%）',
+        en: 'Lottery Entertainment Platform (0–90%)',
+      },
+      description: {
+        zh: '投注流程、開獎動畫與會員介面前端開發',
+        en: 'Front-end development for betting flows, draw animations, and member interfaces',
+      },
+    },
+    {
+      title: {
+        zh: '體育娛樂平台開發（0–90%）',
+        en: 'Sports Entertainment Platform (0–90%)',
+      },
+      description: {
+        zh: '賽事盤口、即時比分與投注互動體驗開發',
+        en: 'Development of odds displays, live scores, and betting interactions',
+      },
+    },
+    {
+      title: {
+        zh: '後台／大後台系統開發',
+        en: 'Admin & Master Admin Systems',
+      },
+      description: {
+        zh: '多層級權限、營運報表與管理後台介面',
+        en: 'Multi-tier permissions, operational dashboards, and admin interfaces',
       },
     },
   ],
