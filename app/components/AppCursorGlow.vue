@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const TRAIL_LENGTH = 7
 
+const { experienceStarted } = useHeroExperience()
+
 const enabled = ref(false)
 const visible = ref(false)
 const dots = ref(
@@ -27,11 +29,9 @@ onMounted(() => {
 
   if (prefersReducedMotion || !hasFinePointer) return
 
-  enabled.value = true
-
+  let frameId = 0
   let mouseX = window.innerWidth / 2
   let mouseY = window.innerHeight / 2
-  let frameId = 0
 
   const onMove = (event: MouseEvent) => {
     mouseX = event.clientX
@@ -63,9 +63,18 @@ onMounted(() => {
     frameId = requestAnimationFrame(animate)
   }
 
-  window.addEventListener('mousemove', onMove, { passive: true })
-  document.documentElement.addEventListener('mouseleave', onLeave)
-  frameId = requestAnimationFrame(animate)
+  function startCursorGlow() {
+    if (enabled.value) return
+
+    enabled.value = true
+    window.addEventListener('mousemove', onMove, { passive: true })
+    document.documentElement.addEventListener('mouseleave', onLeave)
+    frameId = requestAnimationFrame(animate)
+  }
+
+  watch(experienceStarted, (started) => {
+    if (started) startCursorGlow()
+  }, { immediate: true })
 
   onUnmounted(() => {
     window.removeEventListener('mousemove', onMove)

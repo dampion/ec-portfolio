@@ -27,6 +27,11 @@
     "tagFlutter": "Flutter",
     "tagCreateJs": "Create.js"
   },
+  "audio": {
+    "title": "Permission Request",
+    "description": "Enable sound for an immersive experience.",
+    "enable": "Enable"
+  },
   "print": {
     "documentTitle": "Resume",
     "backToSite": "Back to site",

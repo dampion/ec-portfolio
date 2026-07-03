@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n()
 const { profile } = useResume()
+const { experienceStarted } = useHeroExperience()
 
 const introReady = ref(false)
 const visibleHudCount = ref(0)
@@ -77,12 +78,14 @@ function startTagReveal() {
   }
 }
 
-onMounted(() => {
+watch(experienceStarted, (started) => {
+  if (!started || introReady.value) return
+
   requestAnimationFrame(() => {
     introReady.value = true
     startTagReveal()
   })
-})
+}, { immediate: true })
 
 onBeforeUnmount(() => {
   revealTimers.forEach(clearTimeout)

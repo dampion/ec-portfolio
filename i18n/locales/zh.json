@@ -27,6 +27,11 @@
     "tagFlutter": "Flutter",
     "tagCreateJs": "Create.js"
   },
+  "audio": {
+    "title": "權限請求",
+    "description": "音效開啟感受沈浸式體驗，請開啟音效",
+    "enable": "開啟"
+  },
   "print": {
     "documentTitle": "履歷",
     "backToSite": "返回網站",

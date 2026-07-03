@@ -1,9 +1,13 @@
 <script setup lang="ts">
+const { experienceStarted } = useHeroExperience()
 const visible = ref(false)
 
 onMounted(() => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-  visible.value = true
+
+  watch(experienceStarted, (started) => {
+    if (started) visible.value = true
+  }, { immediate: true })
 })
 </script>
 
