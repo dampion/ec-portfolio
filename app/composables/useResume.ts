@@ -46,17 +46,9 @@ export function useResume(localeOverride?: MaybeRef<Locale>) {
     })),
   )
 
-  const experienceFocus = computed(() =>
-    resume.experienceFocus.map(item => ({
-      title: pickLocalized(item.title, currentLocale.value),
-      description: pickLocalized(item.description, currentLocale.value),
-    })),
-  )
-
   return {
     profile,
     experience,
-    experienceFocus,
     competencies,
     skills,
     education,

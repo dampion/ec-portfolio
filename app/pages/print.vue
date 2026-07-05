@@ -39,7 +39,7 @@ function printText(key: string) {
   return resolveLocaleMessage(value) ?? key
 }
 
-const { profile, experience, experienceFocus, skills, education } = useResume(printLocale)
+const { profile, experience, skills, education } = useResume(printLocale)
 
 useHead({
   title: () => `${profile.value.name} - ${printText('print.documentTitle')}`,
@@ -95,18 +95,7 @@ function handlePrint() {
         <h2 class="print-heading">
           {{ printText('sections.experience') }}
         </h2>
-        <ul
-          v-if="experienceFocus.length"
-          class="print-list"
-        >
-          <li
-            v-for="(item, index) in experienceFocus"
-            :key="index"
-          >
-            <strong>{{ item.title }}</strong> — {{ item.description }}
-          </li>
-        </ul>
-        <div class="space-y-5" :class="{ 'mt-5': experienceFocus.length }">
+        <div class="space-y-5">
           <div
             v-for="(item, index) in experience"
             :key="index"

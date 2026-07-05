@@ -11,53 +11,39 @@ const TAG_REVEAL_STEP = 900
 
 const heroHudTags = computed(() => [
   {
-    label: t('hero.tagLottery'),
+    label: t('hero.tagApp'),
     top: '21%',
     left: '4%',
     rotate: -5,
     floatDuration: 5.6,
   },
   {
-    label: t('hero.tagSports'),
+    label: t('hero.tagWeb'),
     top: '13%',
     right: '2%',
     rotate: 4,
     floatDuration: 6.4,
   },
   {
-    label: t('hero.tagApp'),
+    label: t('hero.tagVue'),
     top: '54%',
     left: '0%',
     rotate: -3,
     floatDuration: 5.9,
   },
   {
-    label: t('hero.tagWeb'),
+    label: t('hero.tagFlutter'),
     bottom: '34%',
     right: '1%',
     rotate: 3,
     floatDuration: 6.8,
   },
   {
-    label: t('hero.tagVue'),
+    label: t('hero.tagCreateJs'),
     top: '34%',
     right: '7%',
     rotate: -2,
     floatDuration: 6.1,
-  },
-  {
-    label: t('hero.tagFlutter'),
-    bottom: '48%',
-    left: '3%',
-    rotate: 4,
-    floatDuration: 5.4,
-  },
-  {
-    label: t('hero.tagCreateJs'),
-    top: '68%',
-    right: '5%',
-    rotate: -4,
-    floatDuration: 6.6,
   },
 ])
 
