@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "bradlc.vscode-tailwindcss",
+    "Nuxtr.nuxt-vscode-extension",
+    "Lokalise.i18n-ally",
+    "usernamehw.errorlens"
+  ]
+}
