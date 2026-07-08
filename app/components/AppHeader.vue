@@ -17,6 +17,7 @@ const isOverHero = ref(true)
 const isMobileMenuOpen = ref(false)
 
 const useLightHeader = computed(() => isOverHero.value && !isScrolled.value)
+const isDarkMode = computed(() => colorMode.value === 'dark')
 
 function toggleLocale() {
   setLocale(locale.value === 'zh' ? 'en' : 'zh')
@@ -55,7 +56,7 @@ function closeMobileMenu() {
   <header
     class="no-print sticky top-0 z-50 transition-all duration-300"
     :class="[
-      useLightHeader ? 'header-on-hero' : '',
+      useLightHeader ? (isDarkMode ? 'header-on-hero-dark' : 'header-on-hero-light') : '',
       isScrolled
         ? 'border-b border-slate-200/80 bg-white/80 backdrop-blur-md dark:border-slate-800/80 dark:bg-slate-950/80'
         : 'bg-transparent',
@@ -156,7 +157,9 @@ function closeMobileMenu() {
       v-if="isMobileMenuOpen"
       class="border-t px-6 py-4 md:hidden"
       :class="useLightHeader && !isScrolled
-        ? 'border-[#A4DEFF]/20 bg-[#02030C]/95 backdrop-blur-md'
+        ? isDarkMode
+          ? 'border-[#A4DEFF]/20 bg-[#02030C]/95 backdrop-blur-md'
+          : 'border-slate-300/70 bg-white/90 backdrop-blur-md'
         : 'border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950'"
     >
       <a
