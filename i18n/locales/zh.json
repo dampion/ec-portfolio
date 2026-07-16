@@ -38,7 +38,8 @@
   },
   "contact": {
     "email": "電子郵件",
-    "location": "所在地",
+    "phone": "電話",
+    "pageViews": "網站瀏覽量",
     "links": "連結"
   },
   "theme": {

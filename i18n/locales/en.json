@@ -38,7 +38,8 @@
   },
   "contact": {
     "email": "Email",
-    "location": "Location",
+    "phone": "Phone",
+    "pageViews": "Page views",
     "links": "Links"
   },
   "theme": {

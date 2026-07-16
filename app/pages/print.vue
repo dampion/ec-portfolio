@@ -79,6 +79,7 @@ function handlePrint() {
         </p>
         <div class="print-contact">
           <span>{{ profile.email }}</span>
+          <span>{{ profile.phone }}</span>
         </div>
       </header>
 

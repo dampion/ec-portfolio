@@ -7,7 +7,8 @@
 - 單頁履歷：關於、工作經歷、技能、學歷、聯絡方式
 - 中英語言切換（偏好儲存於 cookie）
 - 深色 / 淺色主題（尊重系統偏好）
-- 靜態輸出，可部署至 Vercel、Netlify、GitHub Pages
+- 每日唯一裝置瀏覽量（Nuxt API + Upstash Redis）
+- 頁面預渲染、API 部署為 Vercel Function
 - 列印友善樣式（瀏覽器列印或匯出 PDF）
 
 ## 環境需求
@@ -39,14 +40,30 @@ profile: {
 
 UI 文案（導覽、區塊標題等）在 [`i18n/locales/`](i18n/locales/) 的 `zh.json` 與 `en.json`。
 
-## 建置與預覽
+## API 環境變數
+
+瀏覽量計數器使用 Upstash Redis。從 Vercel Marketplace 連接 Upstash 後，Vercel 會自動提供以下變數；本機開發則複製 `.env.example` 為 `.env` 並填入：
 
 ```bash
-# 產生靜態檔案至 .output/public
-pnpm generate
+UPSTASH_REDIS_REST_URL=
+UPSTASH_REDIS_REST_TOKEN=
+```
 
-# 本地預覽靜態站
-pnpm dlx serve .output/public
+若未設定，履歷仍可正常顯示，但會隱藏瀏覽量。
+
+## 建置、測試與預覽
+
+```bash
+pnpm test
+pnpm typecheck
+pnpm build
+pnpm preview
+```
+
+列印 PDF 指令仍會另外產生靜態版本：
+
+```bash
+pnpm resume:pdf
 ```
 
 ## 部署
@@ -55,12 +72,9 @@ pnpm dlx serve .output/public
 
 專案已連接 GitHub：[github.com/dampion/ec-portfolio](https://github.com/dampion/ec-portfolio)
 
-[`vercel.json`](vercel.json) 設定：
+Vercel 會自動偵測 Nuxt，使用 `pnpm build` 建置預渲染頁面與 API Function。Node.js 使用 `24.x`（見 `package.json` engines）。
 
-- Install Command：`pnpm install`
-- Build Command：`pnpm generate`
-- Output Directory：`.output/public`
-- Node.js：`24.17.0`（見 `package.json` engines）
+首次啟用瀏覽量前，在 Vercel Marketplace 建立 Upstash Redis、連接此專案，確認 Production 與 Preview 均取得環境變數，然後重新部署。
 
 **首次 / 手動部署：**
 
@@ -72,15 +86,7 @@ pnpm dlx vercel --prod
 
 **Dashboard：** [vercel.com/dashboard](https://vercel.com/dashboard) → `ec-portfolio`
 
-### GitHub Pages（子路徑）
-
-若部署至 `https://username.github.io/repo-name/`，在 `nuxt.config.ts` 設定：
-
-```ts
-app: {
-  baseURL: '/repo-name/',
-}
-```
+GitHub Pages 等純靜態平台無法執行此專案的瀏覽量 API；如需保留 counter，請部署至支援 Nuxt/Nitro server routes 的平台。
 
 ## 專案結構
 
@@ -93,6 +99,9 @@ app/
 └── assets/css/       # Tailwind 與 print 樣式
 data/resume.ts        # 履歷資料（雙語）
 i18n/locales/         # UI 文案
+server/api/           # Nitro API routes
+server/utils/         # Server-side counter logic
+shared/types/         # App/API 共用型別
 ```
 
 ## 技術棧
@@ -101,3 +110,4 @@ i18n/locales/         # UI 文案
 - [Tailwind CSS](https://tailwindcss.com)
 - [@nuxtjs/i18n](https://i18n.nuxtjs.org)
 - [@nuxtjs/color-mode](https://color-mode.nuxtjs.org)
+- [Upstash Redis](https://upstash.com/docs/redis/howto/vercelintegration)

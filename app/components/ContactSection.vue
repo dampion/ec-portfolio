@@ -1,7 +1,16 @@
 <script setup lang="ts">
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const { profile } = useResume()
 const { target, isVisible } = useScrollReveal()
+const { $pageView } = useNuxtApp()
+const phoneHref = computed(() => `tel:${profile.value.phone.replace(/^0/, '+886').replaceAll('-', '')}`)
+
+const formattedPageViews = computed(() => {
+  if ($pageView.count.value === null) return null
+
+  return new Intl.NumberFormat(locale.value === 'zh' ? 'zh-TW' : 'en-US')
+    .format($pageView.count.value)
+})
 </script>
 
 <template>
@@ -13,7 +22,7 @@ const { target, isVisible } = useScrollReveal()
   >
     <UiSectionTitle :title="t('sections.contact')" />
 
-    <div class="grid gap-6 sm:grid-cols-2">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       <div class="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
         <p class="text-sm font-medium text-slate-500 dark:text-slate-400">
           {{ t('contact.email') }}
@@ -28,10 +37,25 @@ const { target, isVisible } = useScrollReveal()
 
       <div class="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
         <p class="text-sm font-medium text-slate-500 dark:text-slate-400">
-          {{ t('contact.location') }}
+          {{ t('contact.phone') }}
+        </p>
+        <a
+          :href="phoneHref"
+          class="mt-1 block text-lg font-medium text-indigo-600 hover:underline dark:text-indigo-400"
+        >
+          {{ profile.phone }}
+        </a>
+      </div>
+
+      <div
+        v-if="formattedPageViews !== null"
+        class="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900"
+      >
+        <p class="text-sm font-medium text-slate-500 dark:text-slate-400">
+          {{ t('contact.pageViews') }}
         </p>
         <p class="mt-1 text-lg font-medium text-slate-900 dark:text-white">
-          {{ profile.location }}
+          {{ formattedPageViews }}
         </p>
       </div>
     </div>

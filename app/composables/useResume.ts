@@ -16,7 +16,7 @@ export function useResume(localeOverride?: MaybeRef<Locale>) {
     title: pickLocalized(resume.profile.title, currentLocale.value),
     summary: pickLocalized(resume.profile.summary, currentLocale.value),
     email: resume.profile.email,
-    location: pickLocalized(resume.profile.location, currentLocale.value),
+    phone: resume.profile.phone,
     links: resume.profile.links,
   }))
 

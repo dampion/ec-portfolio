@@ -11,8 +11,9 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
   ],
 
-  nitro: {
-    preset: 'static',
+  routeRules: {
+    '/': { prerender: true },
+    '/print': { prerender: true },
   },
 
   runtimeConfig: {

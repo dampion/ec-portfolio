@@ -1,5 +1,5 @@
 export function useScrollReveal() {
-  const target = ref<HTMLElement | null>(null)
+  const target = shallowRef<HTMLElement | null>(null)
   const isVisible = ref(false)
 
   onMounted(() => {

@@ -38,7 +38,7 @@ export interface ResumeData {
     title: LocalizedText
     summary: LocalizedText
     email: string
-    location: LocalizedText
+    phone: string
     links: ResumeLink[]
   }
   experience: ExperienceItem[]
@@ -63,10 +63,7 @@ export const resume: ResumeData = {
       en: 'Frontend Developer specializing in Vue and Hybrid App development. Experienced in high-fidelity Web / H5 implementation, API integration, and front-end performance optimization. Committed to code quality, user experience, and cross-functional collaboration with hands-on Git flow, code review, and CI/CD experience.',
     },
     email: 'evanchen79@gmail.com',
-    location: {
-      zh: '台灣',
-      en: 'Taiwan',
-    },
+    phone: '0928-307205',
     links: [
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/evan-chen-6a9308b5/' },
       { label: 'GitHub', url: 'https://github.com/dampion' },
